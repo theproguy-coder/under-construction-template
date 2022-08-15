@@ -1,6 +1,9 @@
 <html>
-<head>
-<style>
+  <head>
+    <style>
+      p {
+  color: white;
+}
 body {
   text-align: center;
   padding: 70px 50px;
@@ -9,14 +12,14 @@ body {
 }
 
 #main-heading {
-  font-size: 4em;
+  font-size: 2em;
   font-weight: 100;
   color: white;
   text-shadow: 0 0 20px #48C8FF;
 }
 
 #timer {  
-  font-size: 1em;
+  font-size: 3em;
   font-weight: 100;
   color: white;
   text-shadow: 0 0 20px #48C8FF;
@@ -33,13 +36,24 @@ body {
     }
   }
 }
-</style>
-</head>
-<body>
-<h1 id='main-heading'> The old outlives the new. </h>
-<div id="timer"></div>
-<script>function updateTimer() {
-  future  = Date.parse("August 25, 2022 00:00:00");
+    </style>
+  </head>
+  <body>
+    <p id='main-heading'> The old outlives the new. </p>
+
+    <p>Before ArthurRCross took ownership, not a single Robux was spent for anything other than the group.</p>
+
+    <p> After the group fell into the wrong hands, an excess of&nbsp; <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Robux_2019_Logo_white.svg/1200px-Robux_2019_Logo_white.svg.png" alt="Lamp" width="15" height="15"> 325,000 was spent on personal needs.</p>
+    <p> ZUK owns the majority of the assets being utilised by AUK, including what they claim is 'their' London, and reserves the legal right to pursue a DMCA claim.
+    </p>
+    <p> Whenever we give up, abandon, or forget too much, there is always the possibility that the things we have neglected will return with more vigour. </p>
+    <p> The power of the people is significantly greater than that of those in power. </p>
+    <p> Zeus' United Kingdom will not be 'shut down' or 'moved' by anyone other than Zeus. <p>
+      <br></br>
+    <div id="timer"></div>
+    <script>
+      function updateTimer() {
+  future  = Date.parse("August 25, 2022 11:30:00");
   now     = new Date();
   diff    = future - now;
 
@@ -61,7 +75,6 @@ body {
       '<div>' + s + '<span>seconds</span></div>' ;
 }
 setInterval('updateTimer()', 1000 );
-</script>
-</body>
+    </script>
+  </body>
 </html>
-```

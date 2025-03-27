@@ -1,71 +1,79 @@
-<html>
+<!DOCTYPE html>
+<html lang="ro">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AirFix - Revenim în curând!</title>
 <style>
-body {
-  text-align: center;
-  padding: 70px 50px;
-  background: #0D1A29;
-  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;  
-}
-
-#main-heading {
-  font-size: 4em;
-  font-weight: 100;
-  color: white;
-  text-shadow: 0 0 20px #48C8FF;
-}
-
-#timer {  
-  font-size: 1em;
-  font-weight: 100;
-  color: white;
-  text-shadow: 0 0 20px #48C8FF;
-  
-  div {
-    display: inline-block;
-    min-width: 90px;
-    
-    span {
-      color: #B1CDF1;
-      display: block;
-      font-size: .35em;
-      font-weight: 400;
+    body {
+        text-align: center;
+        padding: 70px 50px;
+        background: #0D1A29;
+        font-family: "Open Sans", sans-serif;
+        color: white;
     }
-  }
-}
+    
+    h1 {
+        font-size: 3em;
+        font-weight: 700;
+        color: #48C8FF;
+        text-shadow: 0 0 20px #48C8FF;
+    }
+    
+    p {
+        font-size: 1.2em;
+        font-weight: 300;
+        color: #B1CDF1;
+    }
+    
+    #timer {
+        font-size: 1.5em;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+    
+    .timer-box {
+        display: inline-block;
+        min-width: 100px;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        margin: 5px;
+    }
+    
+    .timer-box span {
+        display: block;
+        font-size: 0.8em;
+        font-weight: 400;
+        color: #B1CDF1;
+    }
 </style>
 </head>
 <body>
-<h1 id="main-heading">Patience is power.</h1>
-<p>Patience is not an absence of action;</p>
-<p>rather it is "timing"</p>
-<p>it waits on the right time to act,</p>
-<p>for the right principles</p>
-<p>and in the right way.</p>
-<div id="timer"></div>
-<script>function updateTimer() {
-  future  = Date.parse("December 1, 2024 12:00:00");
-  now     = new Date();
-  diff    = future - now;
-
-  days  = Math.floor( diff / (1000*60*60*24) );
-  hours = Math.floor( diff / (1000*60*60) );
-  mins  = Math.floor( diff / (1000*60) );
-  secs  = Math.floor( diff / 1000 );
-
-  d = days;
-  h = hours - days  * 24;
-  m = mins  - hours * 60;
-  s = secs  - mins  * 60;
-
-  document.getElementById("timer")
-    .innerHTML =
-      '<div>' + d + '<span>days</span></div>' +
-      '<div>' + h + '<span>hours</span></div>' +
-      '<div>' + m + '<span>minutes</span></div>' +
-      '<div>' + s + '<span>seconds</span></div>' ;
-}
-setInterval('updateTimer()', 1000 );
-</script>
+    <h1>🚀 AirFix se pregătește de decolare!</h1>
+    <p>Suntem în faza finală de pregătire pentru a-ți oferi cea mai rapidă soluție pentru despăgubiri la zboruri întârziate și anulate.</p>
+    <p>Revenim în curând! ⏳</p>
+    
+    <div id="timer"></div>
+    
+    <script>
+        function updateTimer() {
+            let launchDate = new Date("May 1, 2025 12:00:00").getTime();
+            let now = new Date().getTime();
+            let diff = launchDate - now;
+            
+            let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            let secs = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById("timer").innerHTML =
+                '<div class="timer-box">' + days + '<span>zile</span></div>' +
+                '<div class="timer-box">' + hours + '<span>ore</span></div>' +
+                '<div class="timer-box">' + mins + '<span>minute</span></div>' +
+                '<div class="timer-box">' + secs + '<span>secunde</span></div>';
+        }
+        setInterval(updateTimer, 1000);
+    </script>
 </body>
 </html>
